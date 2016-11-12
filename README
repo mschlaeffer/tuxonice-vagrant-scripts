@@ -1,0 +1,8 @@
+Install 'vagrant' and 'virtualbox', then run with
+
+./tuxonice-test.sh <boxes>
+
+where <boxes> can be any or all of:
+
+precise32 precise64 trusty32 trusty64 xenial32 xenial64
+
