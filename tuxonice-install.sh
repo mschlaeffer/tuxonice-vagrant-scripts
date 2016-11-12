@@ -21,15 +21,15 @@ cat /proc/meminfo | grep Swap
 echo 'Install TuxOnIce kernel package using ppa.'
 add-apt-repository -y ppa:tuxonice/ppa
 add-apt-repository -y ppa:tuxonice/staging
-apt-get update
-apt-get install -y -V linux-generic-tuxonice tuxonice-userui
+apt update
+apt install -y -V linux-generic-tuxonice tuxonice-userui
 
 echo 'Install additional packages to test TuxOnIce.'
-apt-get install -y -V pm-utils stress
+apt install -y -V pm-utils stress
 
 echo 'Remove old TuxOnIce kernel packages.'
-apt-get autoremove -y --purge
+apt autoremove -y --purge
 
 echo 'Update existing TuxOnIce kernel packages.'
-apt-get dist-upgrade -y -V
+apt dist-upgrade -y -V
 
