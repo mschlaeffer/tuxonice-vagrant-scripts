@@ -1,8 +1,7 @@
-Install 'vagrant' and 'virtualbox', then run with
+Scripts to test the TuxOnIce kernel images of the TuxOnIce launchpad ppa.
 
-./tuxonice-test.sh <boxes>
+Install 'virtualbox', 'vagrant' and the vagrant plugins 'vagrant-guest' and 'vagrant-reload'.
 
-where <boxes> can be any or all of:
+Run the tests where <series> can be any of {trusty, xenial, zesty, artful}:
 
-precise32 precise64 trusty32 trusty64 xenial32 xenial64
-
+./tuxonice-test.sh <series>
