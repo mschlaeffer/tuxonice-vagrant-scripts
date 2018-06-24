@@ -24,20 +24,22 @@ cat /proc/meminfo | grep Swap
 
 echo
 echo '-----------------------------------------------------'
+echo 'Add TuxOnIce PPA.'
+add-apt-repository -y ppa:tuxonice/ppa
+add-apt-repository -y ppa:tuxonice/staging
+apt update
+
+echo
+echo '-----------------------------------------------------'
 echo 'Install packages to test TuxOnIce.'
 apt install -y -V pm-utils stress
 
 echo
 echo '-----------------------------------------------------'
 echo 'Install TuxOnIce UserUI from ppa.'
-add-apt-repository -y ppa:tuxonice/ppa
-add-apt-repository -y ppa:tuxonice/staging
-apt update
 apt install -y -V tuxonice-userui
 
 echo
 echo '-----------------------------------------------------'
 echo 'Install TuxOnIce kernel from ppa.'
-sed -i 's/trusty/artful/' /etc/apt/sources.list.d/*.list
-apt update
 apt install -y -V linux-generic-tuxonice

@@ -1,11 +1,11 @@
 #!/bin/sh
 
 for i in $*; do
+    export UBUNTU=$i
     # cleanup
     vagrant halt
     vagrant destroy -f
     # setup
-    sed -i "s|'s/trusty/.*/'|'s/trusty/$i/'|" tuxonice-install.sh
     vagrant box update
     vagrant up --provision
     # test
@@ -14,4 +14,3 @@ for i in $*; do
     # shutdown
     vagrant halt
 done
-
